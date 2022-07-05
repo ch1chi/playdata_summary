@@ -130,6 +130,9 @@ int age=10,height,weight; //권장 안함.
 		 *        
 		 * 3. 변수 스코프 ( scope ) => 변수를 사용할 수 있는 범위 의미. 기본적으로 블럭 ( scope )
 		 *     자바 언어는 변수가 블럭 scope를 따른다고 말한다.
+		 
+		 
+	
 		 *     
 		 */
    
@@ -140,3 +143,86 @@ int age=10,height,weight; //권장 안함.
 
 		System.out.println(num);     // 로컬 변수인데 초기화가 되어서 에러가 나지않는다.
 		System.out.println(address); // 로컬 변수인데 초기화가 안되어서 에러가 발생한다.
+		
+	---------------------------------------------------------------------------------------------------------------------------	
+		public class CastingTest1 {
+
+	public static void main(String[] args) {
+		// 기본형 타입의 묵시적 형변환
+		
+		//1. byte -> short -> int -> long -> float -> double
+		
+		
+		byte b=1;
+		short b2 = b;
+		int b3 = b2;
+		long b4 = b3;
+		
+		float b5 = b4;
+		double b6 = b5;
+		
+		//역 실습
+		int x = 10;
+		short x2 = (short) x;          // x는 형변환 명시적으로 한 것 
+		
+		//2. char -> int
+		char c = 'A';
+		int c2 =  c;
+		System.out.println(c2);       // 값은 65  .  왜냐면 아스키코드값이라 그럼
+		
+		char k = 'a';
+		int k2 = k;
+		System.out.println(k2);       // 값은 97  .  아스키코드값.
+		  
+		//char가 연산이 가능하다.
+		System.out.println('A'+1);
+		
+		//역실습   int --> char
+		char xyz = 65;                //묵시적 형 변환
+		char xyz2 = (char)65;         // 명시적 형 변환 
+	
+		
+		System.out.println(xyz+""+xyz2);
+	}
+
+}
+-----------------------------------------------------------------------------------------------------------------------------
+public class CastingTest2 {
+
+	public static void main(String[] args) {
+		//3.     int 보다 작은 타입의 연산 결과는 int로 반환 된다.
+		
+		short s = 10;
+		short s2 = 5;
+		//short s3 = s + s2;   //int는 4바이트인데  쇼트는 2바이트다 
+		
+		                       // 그렇다면 어떻게 해결을 해야할까???
+		
+		//해결 1                                                                  &&&&&   해결책  &&&&
+		int ss = s+s2;                              // ★★★★★ byte건 쇼트건 결국 더하면 새로운 값이 등장하기 때문에 int값으로 받아야한다.★★★★★
+		//해결 2
+		short  ss2  = (short) (s+s2);
+//		short  ss3 = (short)s+s2;    ---> 이건 왜 주석했냐면, 결합 방식을 잘못해서 결과값이 안나옴 그래서 주석처리 함.
+		
+		//4.  연산할 때 작은 타입하고 큰 타입이면 결과는 큰 타입이 변환 된다.
+		
+		int y = 10;
+		double y2 = 3.14;
+		double result = y + y2;
+		
+		/*
+		 *        기본형 및 참조형도 데이터 형 변환이 가능하다.
+		 *         즉, 참조형인 클래스도 형변환이 가능하다.
+		 *        예) A 클래스 --> B 클래스 타입으로 변환 가능하다.
+		 *            단, A 와 B의 관계가 상속 관계이어야 한다. 
+		 *            역으로 변환되는 클래스들간의 관계가 상속 관계가 아니면 형 변환이 안된다.
+		 * 
+		 * 
+		 */
+		
+		
+
+	}
+
+}
+
