@@ -153,10 +153,10 @@ int age=10,height,weight; //권장 안함.
 		//1. byte -> short -> int -> long -> float -> double
 		
 		
-		byte b=1;
-		short b2 = b;
-		int b3 = b2;
-		long b4 = b3;
+		byte   b  = 1;
+		short  b2 = b;
+		int    b3 = b2;
+		long   b4 = b3;
 		
 		float b5 = b4;
 		double b6 = b5;
@@ -198,11 +198,11 @@ public class CastingTest2 {
 		
 		                       // 그렇다면 어떻게 해결을 해야할까???
 		
-		//해결 1                                                                  &&&&&   해결책  &&&&
-		int ss = s+s2;                              // ★★★★★ byte건 쇼트건 결국 더하면 새로운 값이 등장하기 때문에 int값으로 받아야한다.★★★★★
+		//해결 1                                                          &&&&&   해결책  &&&&
+		int ss = s+s2;                    // ★★★★★ byte건 short건 결국 더하면 새로운 값이 등장하기 때문에 int값으로 받아야한다.★★★★★
 		//해결 2
 		short  ss2  = (short) (s+s2);
-//		short  ss3 = (short)s+s2;    ---> 이건 왜 주석했냐면, 결합 방식을 잘못해서 결과값이 안나옴 그래서 주석처리 함.
+//		short  ss3  = (short)s+s2;    ---> 이건 왜 주석했냐면, 결합 방식을 잘못해서 결과값이 안나옴 그래서 주석처리 함.
 		
 		//4.  연산할 때 작은 타입하고 큰 타입이면 결과는 큰 타입이 변환 된다.
 		
@@ -242,7 +242,7 @@ public class CastingTest2 {
 		 *          따라서 한 줄에 출력 된다.
 		 *  3. System.out.printf(    ,값1,값2,값3    ) ---> 2개 이상이 오지만, 정해지진 않는다.
 		 *  
-		 *     값이 문자열 : %s
+		 *     값이 문자열  : %s
 		 *     값이 문자    : %c
 		 *     값이 정수    : %d
 		 *     값이 실수    : %f
@@ -250,4 +250,7 @@ public class CastingTest2 {
 		 *     그리고  Print 처럼  한줄로만 나온다.
 		 *     
 		 *     ===> 출력할 때 특정 포맷을 만들기 위해서 사용된다. 
+		 
+		 
+		 
 		 *     
