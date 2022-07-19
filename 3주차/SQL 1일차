@@ -1,3 +1,23 @@
+-- SQL 주석문은  -- 이걸로 하는 것이다.
+
+-- hr 계정 Lock을 풀고 비번을 설정
+
+-- SQL은 대,소문자를 가리지 않는다  자바랑  다르다.
+
+alter user hr
+identified by hr  account unlock;
+
+
+
+-- 워크샵에서 사용할 계정을 생성한다. 그리고 권한을 할당
+
+drop user workshop;    --> 삭제할 때 쓰임.
+
+create user workshop
+identified by workshop;
+
+grant resource, connect    --> 권한을 주는 것
+to workshop;
 
 
 
