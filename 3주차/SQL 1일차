@@ -59,7 +59,7 @@ foreign key  --   하나의 테이블에서 다른 테이블을 참조하기 위
 
 가. Data Query Language(DQL:질의어)  =    SELECT(데이터 검색시 사용)
 
-나. Data Manipulation Language       =    INSERT(데이터 입력)
+나. Data Manipulation Language       =    INSERT(데이터 입력)            ** 기본적으로 메모리에서만 동작이 발생한다.
     DML:데이터 조작어)                    UPDATE(데이터 수정)
                                           DELETE(데이터 삭제)
                                           MERGE(데이터 병합)
@@ -69,21 +69,25 @@ foreign key  --   하나의 테이블에서 다른 테이블을 참조하기 위
                                           DROP(데이터베이스 객체 삭제)
                                           RENAME(데이터베이스 객체이름 변경)
                                           TRUNCATE(객체 정보 절삭)
-                                          
-                                          
+ 
+라. Transaction Control Language      =   COMMIT(트랜잭션 작업 반영)
+     (TCL:트랜잭션 처리어)                ROLLBACK(트랜잭션 작업 취소)
+
+마.  Data Control Language            =   GRANT(권한 부여)
+     (DCL:데이터 제어어)                  REVOKE(권한 취소) 
   
   
   
-  ****   오라클 객체  ****
+  ****   오라클 객체를 만드는 5가지 ( '다.' 의  CREATE 부분 ) ****
   
   1. 테이블 ★★★★( DDL을 이용 )       - 실제 Data 저장
-  2. 인덱스                             -  검색을 빠르게 해준다. 일반 교재의 색인표       <테이블>
-  3. 뷰 ( 테이블의 helper 역할 ) <창>   -  보안 + 복잡한 SQL 문을 간결하게 사용하는 목적  <테이블>
+  2. 인덱스                             -  검색을 빠르게 해준다. 일반 교재의 색인표           <테이블>
+  3. 뷰 ( 테이블의 helper 역할 ) <창>   -  보안 + 복잡한 SQL 문을 간결하게 사용하는 목적      <테이블>
   4. 시퀀스 ( 오라클  )                 -  특정 컬럼 넘버링 ( ex)) 게시판의 글 번호 같은 것 )
   5. 시노닝                             -  테이블의 별칭을 사용 ( 왜냐면 보안을 위해서 )
                                           
                                           
-                                          
+  ****  오라클   구조                                        
                                           
                                           
                                           
