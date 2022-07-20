@@ -1,0 +1,6 @@
+******  Order By 절  ******
+
+SELECT [DISTINCT] {*, column [Alias], . . .}
+FROM 테이블명
+[WHERE 조건식]
+ORDER BY { column, 표현식} [ASC|DESC];
