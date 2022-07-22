@@ -6,4 +6,5 @@
 
 select 
 from    <-------- 이것이 main 쿼리
-where   컬럼명  연산자  ( select from .... );   <---- 서브 쿼리
+where   컬럼명  ★★★연산자★★★  ( select from .... );   <---- 서브 쿼리는  1. 단일행 
+                                                                              2. 다중행  
