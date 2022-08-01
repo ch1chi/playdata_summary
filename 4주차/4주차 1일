@@ -9,6 +9,8 @@ client ( 웹 브라우저 )   1. 요청                                         
   ★★★   클라이언트는 서버에 '요청'을 하고,  서버는 그것에 대해 '응답' 한다.
   
   
+  
+  --------------------------------------------------
   1.  웹 브라우저가  웹서버에  요청한다.
   2.  html를 검색한다.  성공하면 응답을 하게 되고,  실패하는 h404가 뜨게 된다.
   
@@ -18,7 +20,152 @@ client ( 웹 브라우저 )   1. 요청                                         
   다.  html로 받아  웹 브라우저한테 응답한다.
   
   
+ ------------------------------------------------- 
+  이것들 1~5번이라고 생각하면 됨.  
+  
+  
+  ** 환경 설정
+  
+  1. JDK 설치
+  2. eclipe 설치 -- java ee ( enterprise edition ) ---> jsp . sevelet 지원
+  3. tomcat 설치
   
   
   
+   *   PC 안에는  크롬 브리우저 ,  tomcat 서버 , 오라클이 있다
+  (  포트 번호 )                   ( 8090 )       ( 8080 )
   
+  
+< Client PC >       ---------    network     ----------     <  서버 PC  >
+
+서버Pc Ip번호                                               tomcat(포트번호 8090)     oracle(포트번호 1521)
+--> local host
+                                                               webapps
+ 서버port번호 : 8090                                           docs , examples  ---> 물리적인 폴더
+                                                          ===> context명 (논리적이름)  이런것들이 우리가 찾고자하는 파일들이 있음.
+                                                          
+   http://localhost:8090/context명/파일
+   
+   
+   ***********
+   java ee 버젼에서 hello world! 를 실행해 보았다.  run as를 돌려보았다.
+   ----> 오류들이 뜨다가 사라지면서  Run as가 실행이 됐다.
+   
+   왜?  오류들이 사라졌다가 결과값이 나왔지?? ---->>  info ? 다  
+  Path경로는 context명 이고 ,  document는 논리적인 파일명
+  
+  
+  
+  ----------------------------------------서버  PC ----------------------------------------------------
+                                                                       oracle
+                                                                       (포트번호 1521)
+  
+                   ----------------Tomcat 서버-------------------------------------------
+   포트번호 8090   |                          ( 논리적인 이름)         ( 물리적인 이름 )
+                   |                              context                web application
+                   |                            이름 : /xxx             이름:   hello
+                   |                                                             --> 메모리같은것
+                   |          -------------------
+                   |         | webapps
+                   |         | 
+                   |         |      - hello  : 
+                   |         |           -Web_inf
+                             |          -test.html ( 자원 ) 
+                                  - docs      
+
+ 1.  http://localhost:8090/context명/text.html 이것을  요청한다!
+ 2.  서버 작업을 한다!!
+ 3.  text.html 버젼으로 응답한다.
+ 4.  test.html 랜더링한다.
+
+
+
+* jsp
+
+               ----------------------------------------< 서버 jsp >--------------------------------------
+                                                                                  < oracle >
+1. 브라우저가                                                                      포트번호 1521
+localhost에게 요청함(jsp에게)                                                                   
+                         --------------------< tomcat >------------------------    
+                                                               context | web app
+  -                                                                         
+                                ------webapps-----
+                                     - hello
+                                           -  web-imi
+                                           -  test.jsp
+                                                                      
+                                                                      
+                                                                      
+***** Web Applicattion - 개발
+
+1. context명 + web Application 명 mapping   ----->   context명  |  web application (저장위치는 tomcat의 모듈)
+                                                       /xxx     |   help
+
+2. Servlet mapping 
+
+   ---------------------------------------------------------------------------------------
+      Servlet mapping   |    Servlet 명  -----> 저장 위치는??? -- 가. Servlet파일 안에( @WebServlet("/TestServlet")
+                        |                                         나. Servlet파일 외부에 web.xml 설정
+        /TestServlet    |   com.servlet.TestSerlet
+  
+  
+  Servlet 만드는 방법
+  1.   package 지정  ---->> com.servlet
+  2.   extends httpservlet
+  3.   서비스 메서드 
+         -- doGet(  ,  )
+         -- doPost(  , )     
+         
+         
+***서블릿                                  *** jsp
+100% 중                                        html 코드 + jsp코드 == 85% (프래젠테이션로직)
+
+자바코드 85% (비즈니스로직)                          자바코드 15% ( 비즈니스 로직 )
+ html모드 15%   
+ (프레젠테이션 로직)
+ 
+ 
+ ##########  최종 web application 구조  ★★★★X100
+ 
+ 브라우저                    tomcat
+                            서블릿
+                                            서비스
+                             jsp           
+ 
+ 가. 브라우저가 서블릿에 '요청'한다.  ( 왜냐? 비즈니스 로직을 잘 다뤄주니까 )
+ 나. (2)서블릿------> 서비스 ----> DAO ---> 오라클 
+ 다. 다시 오라클 --->  DAO ---> 서비스 ----> 서블릿
+ 라. (8)서블릿 ---->(9)jsp---->(10)브라우저에게  응답한다.       
+  ↑
+ ★★★★ MVC 패션
+ 
+ 1) 서블릿 작동 방법 
+   가) package
+   나) extends httpservlet
+   
+   
+ 2) 서블릿 계층 구조
+ 
+   Servlet      --->  destory , init , gerservletconfig()
+     ↑
+   generiservlet  ( 추상 클래스 )
+     ↑
+   httpservlet    ( 추상 클래스 )
+     ↑
+   testservlet
+         
+3) 서비스메서드 구현  
+    -doGet ( 기본 )
+    -doPost
+    
+4) 서블릿 mapping
+     -- webserlvet
+     -- web.xml
+     
+  URL 요청 방법 ★★★★★★★★★★★★★★★
+  http://서버ip:path번호/컨택트명/서블릿 mapping
+
+
+
+
+
