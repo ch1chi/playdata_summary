@@ -46,4 +46,11 @@ String [  ] values = request.getparameter Values ( "hobby" )
       <helloservlet>
         servletcontext
         servletconfig , getservlet context()  ---> 다 그냥 사용할 수 있음.
+        
+*** DB 연동 ***
+
+1.  드라이버  build path 대신에  pynamic web 프로젝트의 webapps --> WEB-INF ( lib )  
+( ojdbc6_gjar )  -------------------------------------------------> lib에  복사
+
+2. 서비스+ DAO+ DB연동 
       
