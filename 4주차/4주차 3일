@@ -1,1 +1,95 @@
+**서블릿에서 JSP에 위임하기   ## 주의할 점 -->> JSP에 직접 요청 안한다.
 
+
+브라우저      ------->>> 1. 서블릿   ------> 가. 처리
+                                           나. 결과 ( 임의의 DATA )  , List ( DeptDTO )★★        가 + 나 = 비즈니스식 로직
+                        
+                        2.   JSP   --->> 보여주기  --> 프레젠테이션 로직
+                        
+                        
+                        
+브라우저 --->  1 + 2  ---->  브라우저
+        (요청)            ( 응답 )
+    
+ **a. 위임 방법 
+ 
+ 1. 포워드
+ 2. 다이렉트 
+ 
+ b.  전달 방법 
+  - scope 이용
+  
+  
+ *** 위 임 ***
+ 
+ 가.  포워드 (forward) ----  httpServletRequest  
+ 
+          - RequestDispatcher dis = request.getRequestDispatcher("a.jsp");
+                            dis.forward(request, response);
+                            
+                            
+ 나.  리다이렉트(redirect) ---- httpServletResponse
+                        
+                     response.dendRedirect( " a.jsp " );
+                     
+ ****
+ forward                                                                              Redirect
+ 
+ --> 서블릿에서 생성된 HttpServletRequest requery을                                      서블릿에서 생성된 HttpServletRequest request
+       jsp 요청시에도  사용한다.  ( request 확장 )                                        jsp 요청시 사용된 request가 다르다
+       
+       ===>  URL 변경 X                                                                        ====> URL 변경 O
+       
+       
+     %%%%%%%%%   요청할때 ( 위임 )  %%%%%%%%%%%%
+      
+      Data 전달 방식에는 Scope를 이용한다.
+      거기서 3가지가 있는데
+      1.  request
+      2.  session
+      3.  application
+      
+      
+   2.  게시판 글쓰기
+   
+    브라우저 --------------->  Tomcat
+                               가. BoardWroteUI
+                               나. WriteForm.jsp
+                               다. boardWriteController
+      --->서비스 ---> DAO ---> DB ----> DAO ---->서비스 ----> 즉, 목록 설정
+      
+      BoardRetrieveController  --> 
+      
+      
+      
+  3.  글 수정하기
+  
+  가. 글번호
+  나. 텍스트
+  다. 작성자
+  라.  내용
+  
+  
+ 4.  글 삭제    ★★★★★★★★★★★★게시판은 꼭 알아둬야 한다 ★★★★★★★★★★★★★★
+ 
+ 브라우저 ---->  BoardDeleteController  ----> 서비스 ---> DAO --->   다시  빠꾸!!!
+ 
+ 
+ 
+ jsp/service버젼의 MVC + JDBC ===>  JSP/Serveice MVC + MyBatics ====> Spring의 MVC  ++ JDBC 
+ 
+ ★★★★★★SpringBoot의 MVC + JPA
+ 
+  
+  
+  
+  
+  
+      
+      
+      
+      
+      
+      
+      
+ 
