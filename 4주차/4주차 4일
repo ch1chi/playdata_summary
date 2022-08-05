@@ -33,6 +33,7 @@ http://mybatis.org
 web 환경에서도 해볼꺼고,  비 web환경에서도 할 예정
 비웹에서의 main()
  1. buildpath 해야함
+ 
    가. ojdbcbg.jar
    나. mybatis.jar
    
@@ -41,9 +42,52 @@ web 환경에서도 해볼꺼고,  비 web환경에서도 할 예정
     com.config 패키지에 저장
  
  3.  xml 설정 
-    가.  configuration.xml ====>> src저장 ( 패키지 사용 가능 )
-    
+    가.  configuration.xml ====>> src저장 ( 패키지 사용 가능 )  ===> (환경 설정) 
+ 4. xml 설정 <  sql문 설정  > 
+ 
+   ---> 테이블명_mapper.xml 
+   ---> scr 저장 ( 패키지명 )
 ★★★★  띄어쓰기는 안된다!!!!!!! ★★★★
 
+
+**mybatis
+1.  다운로드
+   http://mybatis.org
+      가. 메뉴얼
+      나. mybatis.jar
+2. 이클립스에서 프로젝트 설정
+3.  buildpath  
+     가. ojdbc6_g.jar
+     나. mybatis.jar
+4. 4가지 정보 저장
+     가. jdbc.properties  ---->  key=value 형식 사용 ---> 5번의 환경설정용 그쪽에 등록
+5. 2개의 xml 파일 필요함
+   -- 환경 설정용   ---> configuration.xml
+   
+   -- sql 설정용    ---> DeptMapper.xml  ---> 5번의 환경설정용 그쪽에 등록
+                    --->  EmpMapper.xml
+ 
+ 
+ 6. 자바 코드로 Configuration.xml 읽기
+    메뉴얼에서 복사
+    sqlsessionfactory  API까지 얻음
+    
+    
+  *** JDBC 
+  1.  
+  
+  
+  
+  
+  
+  
+  
+  ***  Mybatis   ★★★★★
+  1. 예외 처리를 하지 않는다  ★★
+  2.  close를 쓰지 않는다     ★★
+  3.  sql문이  외부 파일에 저장
+  4.  환경 설정 정보가  외부 파일에 저장
+  
+    
 
    
