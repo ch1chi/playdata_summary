@@ -1,0 +1,116 @@
+// 한 줄 주석
+/* 주석
+*/
+
+
+//js 코드만 작성하는 부분
+
+/*
+  javascript에서의 변수, 키워드 , 예약어
+  var , let , const
+  자바는 정적타입 언어 , 강 타입 체크
+  ex) int a = 5; String name = "Yoo";
+   컴파일에러 ==> 실행 전에 미리 컴파일러가 유효성 체크
+   런타임에러 ==> 실행 과정에서 발생하는 에러
+
+   자바스크립트는 동적 타입 언어다. 그래서 상대적으로 타입 체킹이 느슨함
+   ex) var a = 5;
+   a = "yoo";
+ 
+    const(contants) : 재할당 불가 ( java에서의 final느낌)
+   //변수 (variable)
+*/
+   let userName = 'Yoo'; // 문자열에 홑따옴표 사용 가능
+   console.log(userName); // 브라우저 컨솔에 출력하는 방식
+ 
+   userName = 'Why'; // 재할당(Reassign); 재할당 시에는 let 키워드를 다시 쓰지않아도 된다.
+
+    const allUsers = 20;
+    allUsers = 5;
+    // 일단 무조건 const로 변수를 만들고 작성, 작성 과정 중에 특정 변수는 재할당이 필요한 것 같아 보이면, 그때 그 변수만 let으로 변경
+  --------------------------------------------------------------------------
+  
+  /*
+JS에서 원시 값을 제외한 모든 것은 객체
+
+기본적인 차이는 원시 값은 하나의 값만을 나타내지만,
+객체는 다양한 타입의 값을 하나의 단위로 구성한 복합 자료 구조
+
+
+
+class Mouse {
+    int age;
+    String name;
+
+}
+age라는 기본 타입의 정수형 변수, name이라는 문자열 타입의 문자열 변수들을 하나로 묶어서 관리
+
+원시 값은 변경 불가능한 ㄱ밧
+객체는 변경 가능한 값
+
+객체는 프로퍼티(속성)으로 구성된 집합, 그 프로미터는 키와 값으로 구성됨
+JS에서 사용할 수 있는 모든 값(ex.number , string, boolean, object등등)들은
+ 프로퍼티의 value(값)가 될 수 있음
+*/
+
+
+
+    //객체 생성 - 객체 리터럴 방식 ==> {}
+    const dog = {}; //비어있는 dog 객체를 만든 것.
+
+    const cat = {
+        //property 나열
+        name : 'coco' , // name property에 문자열 값 'coco' 할당
+        fruit : 'kiki', 
+        sing: function() { console.log("야옹")}
+           //sing도 프로퍼티는 맞음 
+    
+       
+    }; 
+    console.log(dog);
+    console.table(cat); //cat은 ooo  타입 ( typeof , 리터럴 활용
+    
+    console.log(dog.name);
+    // 프로퍼티를 동적으로 초기 ( 존재하지않는 프로퍼티에 값을 할당하면 추가됨)
+    cat.age = 2;
+    console.log(cat.age);
+
+    //프로퍼티 삭제 (delete연산자 사용)
+    delete cat.age
+    console.log(cat);
+
+
+    console.log(typeof cat.sing); // function 시그니처 자체를 출력
+
+    cat.sing(); // 실제 함수 호출은 프로퍼티명 뒤에 () 작성
+
+    //cat 객체에 프로퍼티로 say를 작성 , 그 값은 함수
+     //출력 문은 야옹 !  fruit을 먹고 싶어
+
+     cat.say();
+----------------------------------------------------------------------
+//JS에서는 함수 작성 방식이 여러개 , 함수 작성 시에는 function 키워드 사용
+
+// 기본적인 함수 정의 , 함수 선언문 방식
+
+function add (a,b)  { return a + b;} ;
+//함수 호출
+console.log(add(2,3));
+// 함수 역시 객체 타비의 깊이기 때문에 생성한 함수를 변수에 할당할 수 있음
+// 두번째 함수 작성 방식 = 함수 표현식 방식 ( 함수를 하나의 값으로써 변수에 할당)
+
+function add (a,b)  { return a + b;} ;
+
+console.log(mtp);
+
+console.log(mtp(2,3));
+// ES6 문법 중 화살표 함수 (arrow function) , fuction 키워드를 사용하지않고, 화살표 
+//a-b ; : return 부분
+const sub = (a,b) => a - b ;
+console.log(sub(10,15)); // sub이라는 변수명으로 함수 호출
+-----------------------------------------------------------------------
+
+
+
+  
+  
