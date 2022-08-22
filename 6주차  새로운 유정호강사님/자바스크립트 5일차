@@ -1,0 +1,36 @@
+const textAreaArray = document.getElementsByClassName('Card__body__content');
+
+// 변수 네이밍 컨벤션, 도메인과 관련된 용어를 미리 정의
+// source: 번역할 텍스트와 관련된 명칭(안녕하세요를 번역하고 싶으면, 안녕하세요가 source)
+// target: 번역된 결과와 관련된 명칭
+
+const [sourceTextArea, targetTextArea] = textAreaArray; // [왼쪽 텍스트영역, 오른쪽 텍스트영역]
+const [sourceSelect, targetSelect] = document.getElementsByClassName('form-select');
+
+// 번역하고자 하는 언어의 타입(ko? en?, ja?)
+let targetLanguage = 'en'; // 기본값으로 en
+
+// 어떤 언어로 번역할지 선택하는 target selectbox의 선택지의 값이 바뀔 때마다 이벤트를 발생하도록, 지정한 언어의 타입 값을 targetLanguage 변수에 할당, 출력
+// change 이벤트 사용, selectbox 객체가 가지고 있는 프로퍼티 활용
+targetSelect.addEventListener('change', () => { 
+    const targetValue = targetSelect.value;
+    targetLanguage = targetValue;
+    
+    // // 제가 한 방법
+    // const selectedIndex = targetSelect.selectedIndex;
+    // targetLanguage = targetSelect.options[selectedIndex].value;
+});
+
+let debouncer;
+sourceTextArea.addEventListener('input', (event) => {
+    if(debouncer) { // debouncer 변수에 값이 있으면 true, 없으면 false
+        clearTimeout(debouncer);
+    }
+
+    // setTimeout(콜백함수, 지연시킬 시간(ms))
+    // 콜백함수 : 지연된 시간 후에 동작할 코드
+    debouncer = setTimeout(() => {
+        const text = event.target.value; // sourceTextArea에 입력한 값
+        console.log(text);
+    }, 3000);
+});
