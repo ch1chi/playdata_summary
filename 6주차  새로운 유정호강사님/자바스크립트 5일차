@@ -34,3 +34,8 @@ sourceTextArea.addEventListener('input', (event) => {
         console.log(text);
     }, 3000);
 });
+
+
+
+프론트엔드 : 더 나은 사용자 경험을 제공하기 위함
+백엔드  :  보다 안정적인 처리를 통해 시스템 안정성 증대
