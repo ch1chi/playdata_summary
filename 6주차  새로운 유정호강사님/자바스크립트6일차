@@ -1,0 +1,6 @@
+방법 1 
+언어감지용 요청 따로 전송 ( app.js --> server.js --> 언어 감지 서버 --> server.js --> app.js )
+언어번역 요청 따로 전송 ( app.js --> 언어 번역 서버 --> server.js --> app.js )
+
+방법 2
+한 번의 요청으로 전부 해결 ( app.js --> server.js --> 언어 감지 서버 --> server.js --> '리다이렉트' -> server.js -> app.js )
