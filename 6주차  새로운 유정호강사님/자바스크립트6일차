@@ -4,3 +4,46 @@
 
 방법 2
 한 번의 요청으로 전부 해결 ( app.js --> server.js --> 언어 감지 서버 --> server.js --> '리다이렉트' -> server.js -> app.js )
+
+
+
+
+git
+Untracked files
+
+--> 버젼 관리를 하려면 .git(로컬 저장소)가 각각의 파일들을 알고 있어야 파일들의 변경 내역을 관리할 수 있음
+
+READ ME라는 이름의 파일을 방금 새로 만들었음
+.git 입장에서  READ ME가 누군지 알까? 모를까?
+
+README 라는 파일하고 .git하고 서로 소개를 시켜줘야함
+.git이 앞으로 README라는 파일도 하나의 버전의 일부로써 관리할 수 있도록(추적을 시키도록) 추가를 해줘야함
+
+지금 Untracked file에 README가 빨간색으로 나왔다는 말은 아직 추적을 하고 있지않은 상태
+
+
+1. 저장소
+ 1) Local repository(로컬 저장소) --> 내 pc안에 있는 .git 폴더
+ 2) Remote repository(원격 저장소) --> Github 사이트 (인터넷 상)에 있는 존재하는 저장소
+
+git init :  저장소 초기화 , git 시작 , git 명령어를 쓰기 위한 필수 명령어,
+            .git(숨김 폴더)를 생성하는 명령어
+  
+git config(uration) : git 환경 설정 명령어
+git status : 현재 작업 폴더의 상태 조회,  자주 쓸수록 좋다
+git clone : 원격 저장소(remote repository에 있는 버젼(파일들)을 로컬 PC로 복제하는 명령어
+
+
+git add
+git commit
+...
+
+파일을 수정하니까 git 저장소가 modified라고 함
+git은 변경 내역을 추적하는 일을 하기 때문에
+README나 CONTRIBUTTING을 추적하도록 등록했기 때문에
+그 이후부터는 해당 파일들의 내용을 수정하면 git이 알아채고(모니터링 중) 표시됨
+
+git add : 새롭게 생성한 파일 ( untracked 상태)이나 기존에 git이 추적 중이던 파일을 staging(무대로 올리는 일)을 하기 위해 사용하는 명령어
+---> staging을 하는 이유?? commit을 하기 위해서
+
+git commit : 지금까지 수정한 변경 내역들을 하나의 스냅샷으로 찍어서 새로운 버젼을 만드는 
