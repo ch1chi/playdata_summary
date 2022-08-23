@@ -38,6 +38,10 @@ git add
 git commit
 ...
 
+***********************
+insert 하고 나갈때 ---> Shift+세미콜론  이후 wq 누르기
+
+**********************
 파일을 수정하니까 git 저장소가 modified라고 함
 git은 변경 내역을 추적하는 일을 하기 때문에
 README나 CONTRIBUTTING을 추적하도록 등록했기 때문에
