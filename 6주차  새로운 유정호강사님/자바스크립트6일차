@@ -47,3 +47,14 @@ git add : 새롭게 생성한 파일 ( untracked 상태)이나 기존에 git이 
 ---> staging을 하는 이유?? commit을 하기 위해서
 
 git commit : 지금까지 수정한 변경 내역들을 하나의 스냅샷으로 찍어서 새로운 버젼을 만드는 
+
+04.practice/.git --> 로컬 저장소
+
+https://github.com/ch1chi/papago.git --> 원격 저장소
+
+git remote add : 로컬이랑 원격이랑 연결해 
+origin : 그냥 변수 이름 ( 주로 origin)
+원격 주소 : https://github.com/ch1chi/papago.git
+
+origin이라는 변수에 https://github.com/ch1chi/papago.git
+
