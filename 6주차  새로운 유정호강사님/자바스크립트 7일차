@@ -1,0 +1,47 @@
+pom.xml은 xml표기법으로 쓴 것 뿐
+
+controller --> 프론트 직원 ( 분기만 시켜주고 있음 )
+Service -->  비지니스 로직 ( 병원 , 금융 )
+DAO  -->  Data Access Object , DB에 접근해서 데이터 전달해주는 역할
+DTO  --> Data Transfer Object 
+Model --> Domain 
+
+객체지향
+다형성  - 인터페이스
+캡슐화  - 정보 은닉
+공통적인 속성과 기능을 뽑아낸다 --> 추상화
+상속     - 
+
+사람이라는 개념은 실체한다? --> x 왜냐면  꼭 집어서 말을 할 수 없기 때문에
+ --->> 일반적으로 실체하지 않는 개념으로 class를 설게
+
+**** 주소값이 다르다
+
+Analyzer --> 분석기, 분석하는 기계
+Parser -> 파싱하는 기계 ( 역할 )
+
+객체라는 것도 객체가 혼자만 존재하면 큰 의미가 없음
+--> 갈라파고스
+
+객체 간 협력
+---> 데이터의 흐름 ( 처리 과정 )
+
+Analyzer 클래스에서 parseLinesFromTSV()를 호출한다는 것은
+어떤 객체가 다른 객체에게 메세지를 전송하는 것
+
+파싱 다했습니다~ 여기 결과물입니다
+--> List<BankTransaction> bankTransactions
+
+상속 --> extends
+
+구성(Composition)
+
+Analyzer 클래스의 멤버 필드
+어떤 클래스의 구성원 ( Member )
+
+구성원 : 필드와 메서드 ( 속성과 기능( 행위 ))
+field (변수 or 상수)
+
+field : RESOURCES 
+method : main() , calculateTotalAmount()
+selectMonth()
