@@ -1,1 +1,62 @@
 
+if True : # 명제가 참이라서 1, 2가 한줄에 하나씩 출력될 것이고 
+    print ("1")
+    print ("2")
+else : # 명제가 참이니까 안 거치고 넘어갈 것이고 
+    print("3")
+    
+print("4") # 들여쓰기가 안 되어있으므로 그냥 출력 
+
+------------------------------------------------------------
+# 번호 입력받기
+# 특정 변수에 저장 
+# 저장한 str의 앞 3글자만 띠어서 비교 
+# 조건에 따라 if~elif~else로 확인
+
+phone = input('번호를 입력해주세요: ex) 019-xxxx-xxxx  ')
+if phone[:3] == '011':
+    print('SKT')
+elif phone[:3] == '016':
+    print('KT')
+elif phone[:3] == '019':
+    print('LGU')
+else:
+    print('알수없음')
+    
+    -----------------------------------------------------------
+    # 입력 받고
+# 입력받은 값이 '키'로 존재하는지 fruits에서 확인
+# 있으면 value, 없으면 '영단어도 입력해주세요' 
+# 키: 밸류 형태로 fruits에 추가 
+# 더 간결하고 효율적인 코드를 고민해보세요 
+fruit = input('과일 이름을 한글로 입력하세요')
+if fruit in fruits: # in 이라는 명령어는 dict에서는 key에서 작동  fruits.keys()
+    print(fruits[fruit])
+else:
+    fruits.setdefault(fruit,input('사전에 없는 단어입니다 영단어도 입력해주세요 '))
+    print(fruits)
+
+-----------------------------
+주사위 게임
+
+# a.strip('-')
+a = input('1~6 사이의 숫자를 입력하세요: ')
+b = input('1~6 사이의 숫자를 입력하세요: ')
+
+# 처음에 값을 받아서 얘가 숫자만 들어있는지 판별 해주는 조건문 
+if a.lstrip('-').isdigit() and b.lstrip('-').isdigit(): # 조건을 판단할 때는 앞에 - 부호를 빼고 숫자인지 판별하지만, 
+                                                                      # 조건문 안으로는 - 부호를 포함한 a 가 들어갈 겁니다 
+    a = int(a) # ValueError: invalid literal for int() with base 10: '가'
+    b = int(b)
+
+    if 0 < a < 7 and 0 < b < 7:
+        if a > b:
+            print('a가 이김')
+        elif a < b:
+            print('a가 짐')
+        else:
+            print('비김')
+    else:
+        print('1-6 사이의 숫자보다 크거나 작은 숫자를 입력하셨습니다')
+else:
+    print('문자를 입력하신 모양입니다')
