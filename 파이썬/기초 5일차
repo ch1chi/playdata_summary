@@ -1,1 +1,95 @@
 
+# 문제가 요청하는 것
+# 과일 입력받기
+# 조건 참 : fruits 딕셔너리의 key값에 있을 경우 해당 key의 value 값 출력
+# 조건 거짓: '사전에 없는 단어입니다'를 출력 후 다시 입력창이 뜨도록 프로그래밍해주세요.
+# break - 사용자가 사전에 있는 과일 이름을 입력하면 프로그램은 자동 종료됩니다.
+
+# 우리가 고려할 것
+# 과일 딕셔너리 생성 - 임의로 테스트용 값을 넣습니다 
+# 과일 입력 
+
+# 없는 과일명을 입력하면 해당 과일명의 새 단어를 추가하는 로직을 만들어보세요 
+
+
+fruits = {'사과':'Apple'} # fruits 변수는 반복문 바깥에 위치시킨다 - 아니면 계속 초기화되기 때문 
+
+while True: # 반복문 - 내가 있는 과일명을 입력할 때까지 (횟수가 정해져 있지 않은 반복문)
+    fruit = input('과일명 입력: ')
+    if fruit in fruits:  # 조건문 - 참
+        print(fruits[fruit]) # fruits[키] 호출하여 밸류 출력
+        break 
+  
+    else:    # 조건문 - 거짓 
+        answer = input('사전에 없는 단어입니다. 추가하시겠습니까? Y/N/Q(종료)') # 오타이거나 진짜 없거나 
+        if answer == 'Y':
+            val = input('영단어를 입력해주세요 ')
+            fruits[fruit] = val # 직접 접근
+            # fruits.setdefault(fruit, val) 
+            print(fruits)
+            break
+        elif answer == 'Q':
+            break
+        # else:
+        #     continue
+
+
+--------------------------------------------------
+
+fruits # 저장장소는 반복문이 실행될 때 초기화되지 않게 반복문 밖에 넣는다 
+
+while True: # 횟수가 정해져있지 않은 반복문은 WHILE 
+    fruit = input('과일명 입력: ')
+    if fruit in fruits:
+        print(fruits[fruit]) 
+        break 
+    else: 
+        answer = input('사전에 없는 단어입니다. 추가하시겠습니까? Y/N/Q(종료) : ')
+        if answer.upper() == 'Y' :
+            val = input('영단어를 입력해주세요 ')
+            fruits[fruit] = val 
+            # fruits.setdefault(fruit, val) 
+            print(fruits)
+            break
+        elif answer.upper() == 'Q' :
+            print('사전을 종료합니다.') # 안내메시지와 함께 
+            break
+        elif answer.upper() == 'N' :
+            continue
+        else:
+            print('잘못된 키를 입력하셨습니다. 종료합니다.')
+            break
+            
+ -----------------------------------           
+            
+for i in range(5):   # i = 0, * = 1, ' ' = 4
+    for j in range(5-i-1):
+        print(' ', end='')
+
+    for j in range(i+1):
+        print('*', end='')
+    print() # 내부 반복이 완료될 때 한줄을 띄워주는 \n
+    
+    
+    
+  --------------  이름 넣기  --------------
+names = ['짱구', "짱아", "철이", "훈이"]
+    
+    # input()으로 이름을 받고 이름 리스트에 해당하는 이름이 있는 경우 이름이 있음을 없음을 출력한다.
+input_name = input('이름 입력하세요: ')
+
+# for문에서 이름이 있는지 없는지 확인을 하고요. 있으면 True, 없으면 False를 특정 변수(flag)에 저장합니다
+for name in names:
+    if input_name == name:
+        print(name, input_name)
+        flag = True
+        break
+    else:
+        print(name, input_name) 
+        flag = False  
+
+# if 문으로 flag가 True이면 '이름이 있습니다', False이면 '이름이 없습니다'를 출력하도록 해주세요
+if flag:
+     print('이름이 있습니다')
+else:
+    print('이름이 없습니다')
