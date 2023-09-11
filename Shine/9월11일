@@ -1,0 +1,6 @@
+Route와 Router에 대해 교육을 받았다
+
+Route란?? ===>  현재 불러온 경로에 대한 정보
+
+Router란?? ==> Route에 대한 집합 or Route의 상위 개념이다
+ex) Router.addroute , Router.push  ===> 등 강압적인, 명령적으로 지시를 내리는 타입
