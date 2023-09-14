@@ -3,4 +3,5 @@
             전문용어로 테이크 오버모드(Takeover mode)의 활성화하면 작동이 될 것이다.
 
 
-2.
+2. npm run serve 도 있다.  너무 npm run dev만 찾지말자
+3.
