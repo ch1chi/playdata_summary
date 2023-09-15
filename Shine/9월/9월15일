@@ -20,6 +20,9 @@ MCS란? Meterial Control System ( 물류제어시스템 )
 ■ MCS란? Material Control System의 약자로 물류 제어 시스템 
 ■ 공장 내의 AMHS장비들에 대한 통합제어환경 제공
 ■ 다양한 Middleware와 DBMS 지원
+==>(미들웨어) 서로 다른 애플리케이션이 서로 통신하는 데 사용되는 소프트웨어 //  데이터베이스 내의 정보를 구성하는 컴퓨터 프로그램의 집합으로서, 
+    자료의 중복성을 제거하고 다른 특징들 중에 무결성, 일관성, 유용성을 보장하기 위해서 자료를 제거하고 관리하는 소프트웨어 체계이다
+
 ■ AMHS 장비 및 Material 에 대한 Real-Time 모니터링
 ■ SEMI Standard Compliant (Stocker-SEM, IB-SEM)
 ■ 상황에 따른 Dynamic Routing
