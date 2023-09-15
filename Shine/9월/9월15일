@@ -16,7 +16,7 @@ MCS란? Meterial Control System ( 물류제어시스템 )
 물류제어시스템은 쉽게 말해서 상위시스템 및 하위 설비시스템과 연동하여 물류 이송을 위한 최적 경로 설정 및 물류 이송을 구현
 
 
-2. 공장 내의 AMHS 장비들에 대한 통합제어환경 제공 ( Automated Material Handling Systems ) 자동화된 자료 처리 시스
+2. 공장 내의 AMHS 장비들에 대한 통합 제어 환경 제공 ( Automated Material Handling Systems ) 자동화된 자료 처리 시스템
 ■ MCS란? Material Control System의 약자로 물류 제어 시스템 
 ■ 공장 내의 AMHS장비들에 대한 통합제어환경 제공
 ■ 다양한 Middleware와 DBMS 지원
@@ -26,7 +26,8 @@ MCS란? Meterial Control System ( 물류제어시스템 )
 ■ Component 기반의 유연한 확장성
 ■ 다른 시스템과의 통합이 용이한 Open Architecture
 
-CIM ==> 상호 운영 컴퓨터 기반 통합 제조 시스
+
+CIM ==> 상호 운영 컴퓨터 기반 통합 제조 시스템
 
 
 // 예상 질문
