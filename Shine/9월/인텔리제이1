@@ -6,7 +6,7 @@ Controller 구현
 Service 구현
 사용자의 요청에 응답하기 위한 비즈니스 로직을 구현
 
-DAO 구현
+DAO 구현 ( Repository ?
 데이터 베이스에 접근하고, SQL을 활용하여 데이터를 실제로 조작하는 코드를 구현
 
 SQL 구현
